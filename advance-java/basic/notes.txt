@@ -1,0 +1,14 @@
+1. Write difference between for and for each loop.
+2. Multi Dimensional Array
+3. Array methods for adding, removing and all, [ArrayList]
+
+
+====== Difference between for and for each loop
+
+1. For loop was used in early version, for each was introduced in the java version 5.
+2. For loop is general purpose suitable for numerical values and just peforming repeatative task where 
+as for each is more suitable for iterating over the arrays and the collections.
+3. for loop has index access to elements by using  their index (like i in used in common) whereas
+for each doesnt have index-based access.
+4. for loop can perform both read and write operations where as foreach loop can perform just read. (primarily)
+5. for loop Offers more control like from, start to end and so on where as for loop has limited control 
