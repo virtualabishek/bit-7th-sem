@@ -1,0 +1,9 @@
+// CORBA IDL File
+// Defines the interface for Greeting Service
+
+module GreetingModule {
+    interface GreetingService {
+        // Returns a welcome message for the given name
+        string greet(in string name);
+    };
+};
