@@ -1,50 +1,42 @@
-# Java Mail API (SMTP) - Assignment Solution
+# Java Mail API - Simple Version
 
-## Requirement
-Send an email using Java Mail API with SMTP configuration.
+Goal:
+Send one simple email from Java using Gmail SMTP.
 
-This implementation uses Gmail SMTP:
-- Host: smtp.gmail.com
-- Port: 465
-- SSL: enabled
-- Authentication: enabled
+This code is intentionally minimal (like a quick nodemailer script):
+- SMTP host is fixed: smtp.gmail.com
+- SMTP port is fixed: 465
+- From email is fixed: codewithabishek@gmail.com
+- To email is fixed: abi@abishekn.com.np
+- Subject and body are fixed in code
+- Password is fixed in code for quick testing
 
-## Project Files
-- `pom.xml`
-- `src/main/java/EmailSender.java`
+Files:
+- pom.xml
+- src/main/java/EmailSender.java
 
-## How to Run
+How to run:
 
-1. Go to project folder:
-```bash
+1. Open terminal in this folder:
 cd ~/Desktop/bit-7th-sem/advance-java/first-assignment/email
-```
 
-2. Set environment variables:
-```bash
-export SMTP_HOST="smtp.gmail.com"
-export SMTP_PORT="465"
-export SMTP_USER="codewithabishek@gmail.com"
-export SMTP_PASS="YOUR_APP_PASSWORD"
-```
-
-3. Compile:
-```bash
+2. Compile:
 mvn -q compile
-```
 
-4. Run:
-```bash
-mvn -q exec:java -Dexec.args="receiver@example.com \"SMTP Test\" \"Hello from Java Mail API\""
-```
+3. Run:
+mvn -q exec:java
 
-## Example
-To send to yourself:
-```bash
-mvn -q exec:java -Dexec.args="codewithabishek@gmail.com \"Test\" \"Hello Abishek\""
-```
+If successful, you will see:
+Email sent successfully to: abi@abishekn.com.np
 
-## Notes
-- Use Gmail App Password in `SMTP_PASS`.
-- Do not store `SMTP_PASS` in source code.
-- If authentication fails, recheck app password and sender account settings.
+Nodemailer to JavaMail mapping:
+- nodemailer host -> mail.smtp.host
+- nodemailer port -> mail.smtp.port
+- nodemailer secure: true -> mail.smtp.ssl.enable = true
+- nodemailer auth user/pass -> Authenticator with PasswordAuthentication
+- transporter.sendMail(...) -> Transport.send(message)
+
+Important note:
+- For test only, password is currently hardcoded in EmailSender.java.
+- After testing, remove hardcoded password and keep it in environment variable.
+- If abi address is different, change the toEmail value in EmailSender.java.

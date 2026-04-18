@@ -14,12 +14,7 @@ public class EmailSender {
         String smtpHost = "smtp.gmail.com";
         String smtpPort = "465";
         String smtpUser = "codewithabishek@gmail.com";
-        String smtpPass = System.getenv("SMTP_PASS");
-
-        if (smtpPass == null || smtpPass.isBlank()) {
-            System.err.println("SMTP_PASS is missing. Set it as an environment variable.");
-            return;
-        }
+        String smtpPass = "kenjjhkiactlhpws";
 
         // Fixed recipient for assignment demo
         String toEmail = "abi@abishekn.com.np";

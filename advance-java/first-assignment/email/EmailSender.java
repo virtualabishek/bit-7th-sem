@@ -11,20 +11,15 @@ import jakarta.mail.internet.MimeMessage;
 
 public class EmailSender {
     public static void main(String[] args) {
-        String smtpHost = getEnvOrDefault("SMTP_HOST", "smtp.gmail.com");
-        String smtpPort = getEnvOrDefault("SMTP_PORT", "465");
-        String smtpUser = getEnvOrDefault("SMTP_USER", "codewithabishek@gmail.com");
-        String smtpPass = System.getenv("SMTP_PASS");
+        String smtpHost = "smtp.gmail.com";
+        String smtpPort = "465";
+        String smtpUser = "codewithabishek@gmail.com";
+        String smtpPass = "kenjjhkiactlhpws";
 
-        if (smtpPass == null || smtpPass.isBlank()) {
-            System.err.println("SMTP_PASS is missing. Set it as an environment variable.");
-            return;
-        }
-
-        // Usage: java EmailSender <toEmail> <subject> <message>
-        String toEmail = args.length > 0 ? args[0] : smtpUser;
-        String subject = args.length > 1 ? args[1] : "Test Email from Java";
-        String body = args.length > 2 ? args[2] : "Hello! This email was sent using Java Mail API over SMTP.";
+        // Fixed recipient for assignment demo
+        String toEmail = "abi@abishekn.com.np";
+        String subject = "Hello Abi";
+        String body = "Hello Abi, this is a simple test email sent from Java Mail API.";
 
         Properties props = new Properties();
         props.put("mail.smtp.host", smtpHost);
@@ -54,11 +49,4 @@ public class EmailSender {
         }
     }
 
-    private static String getEnvOrDefault(String key, String defaultValue) {
-        String value = System.getenv(key);
-        if (value == null || value.isBlank()) {
-            return defaultValue;
-        }
-        return value;
-    }
 }
