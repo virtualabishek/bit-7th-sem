@@ -1,0 +1,3 @@
+haha, hihi huhu. I am just doing java practical, just checking how does the file do things here.
+I am looking forward to learn more from this. This is second line. I am curious does java will 
+show 3 lines or 2 lines or whathever. Does it count the , and all stuffs.
