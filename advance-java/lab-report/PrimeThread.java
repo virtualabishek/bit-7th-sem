@@ -24,6 +24,7 @@ class OddThread extends Thread {
 	OddThread(int limit) {
 		this.limit = limit;
 	}
+
 	public void run() {
 		for(int i = 1; i<=limit; i+=2) {
 			if(PrimeeCheck.isPrime(i)) {
