@@ -11,7 +11,7 @@ public class FirstJDB {
                 "jdbc:mysql://localhost:3306/java_exam?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
         );
         String user = System.getenv().getOrDefault("DB_USER", "abi");
-        String password = System.getenv().getOrDefault("DB_PASSWORD", "imp2083");
+        String password = System.getenv("DB_PASSWORD");
 
         String sql = "SELECT id, name FROM students";
 

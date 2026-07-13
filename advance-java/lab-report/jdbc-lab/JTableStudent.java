@@ -15,9 +15,9 @@ import javax.swing.table.DefaultTableModel;
 
 public class JTableStudent extends JFrame {
 
-    static final String URL = "jdbc:mysql://localhost:3306/student_java";
-    static final String USER = "abi";
-    static final String PASS = "imp2083";
+    static final String URL = System.getenv().getOrDefault("DB_URL", "jdbc:mysql://localhost:3306/student_java");
+    static final String USER = System.getenv("DB_USER");
+    static final String PASS = System.getenv("DB_PASSWORD");
 
     public JTableStudent() throws SQLException {
         setTitle("Student database viewer");

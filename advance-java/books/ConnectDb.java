@@ -8,7 +8,9 @@ public class ConnectDb {
     try {
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to DB");
-      conn = DriverManager.getConnection(DB_URL, "abi", "imp2083");
+      String user = System.getenv("DB_USER");
+      String password = System.getenv("DB_PASSWORD");
+      conn = DriverManager.getConnection(DB_URL, user, password);
       System.out.println("Creating Statemment");
       stmt = conn.createStatement();
       String sql;

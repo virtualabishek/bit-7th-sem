@@ -10,8 +10,10 @@ public class LoginServlet extends HttpServlet {
 			) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if(username.equals("abi")
-            && password.equals("imp2083")) {
+		String validUser = System.getenv("LOGIN_USER");
+		String validPass = System.getenv("LOGIN_PASS");
+		if(username.equals(validUser)
+            && password.equals(validPass)) {
 
             HttpSession session =
                 request.getSession();

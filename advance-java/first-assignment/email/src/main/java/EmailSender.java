@@ -11,10 +11,10 @@ import jakarta.mail.internet.MimeMessage;
 
 public class EmailSender {
     public static void main(String[] args) {
-        String smtpHost = "smtp.gmail.com";
-        String smtpPort = "465";
-        String smtpUser = "codewithabishek@gmail.com";
-        String smtpPass = "kenjjhkiactlhpws";
+        String smtpHost = System.getenv("SMTP_HOST");
+        String smtpPort = System.getenv("SMTP_PORT");
+        String smtpUser = System.getenv("SMTP_USER");
+        String smtpPass = System.getenv("SMTP_PASS");
 
         // Fixed recipient for assignment demo
         String toEmail = "abi@abishekn.com.np";

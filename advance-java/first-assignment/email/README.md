@@ -4,12 +4,11 @@ Goal:
 Send one simple email from Java using Gmail SMTP.
 
 This code is intentionally minimal (like a quick nodemailer script):
-- SMTP host is fixed: smtp.gmail.com
-- SMTP port is fixed: 465
-- From email is fixed: codewithabishek@gmail.com
+- SMTP host, port, user, and password are loaded from environment variables
+- Create a `.env` file at the repo root (see `.env.example`) or export the variables:
+  - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`
 - To email is fixed: abi@abishekn.com.np
 - Subject and body are fixed in code
-- Password is fixed in code for quick testing
 
 Files:
 - pom.xml
@@ -37,6 +36,6 @@ Nodemailer to JavaMail mapping:
 - transporter.sendMail(...) -> Transport.send(message)
 
 Important note:
-- For test only, password is currently hardcoded in EmailSender.java.
-- After testing, remove hardcoded password and keep it in environment variable.
+- Password is no longer hardcoded — it's loaded from `SMTP_PASS` environment variable.
+- Create a `.env` file in the repo root with your SMTP credentials (see `.env.example`).
 - If abi address is different, change the toEmail value in EmailSender.java.

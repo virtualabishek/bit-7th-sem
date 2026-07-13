@@ -14,10 +14,10 @@
     <th>Marks</th>
 </tr>
 <%
-String url =
-"jdbc:mysql://localhost:3306/student_java?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
-String user = "abi";
-String pass = "imp2083";
+String url = System.getenv().getOrDefault("DB_URL",
+"jdbc:mysql://localhost:3306/student_java?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC");
+String user = System.getenv("DB_USER");
+String pass = System.getenv("DB_PASSWORD");
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection conn =

@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class StudentCrud {
 
-    static final String URL = "jdbc:mysql://localhost:3306/student_java";
-    static final String USER = "abi";
-    static final String PWD = "imp2083";
+    static final String URL = System.getenv().getOrDefault("DB_URL", "jdbc:mysql://localhost:3306/student_java");
+    static final String USER = System.getenv("DB_USER");
+    static final String PWD = System.getenv("DB_PASSWORD");
 
     public static void main(String[] args) throws SQLException {
         Scanner sc = new Scanner(System.in);

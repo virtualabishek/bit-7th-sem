@@ -8,8 +8,8 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 public class LoginJavaFx extends Application {
-    String user = "abi";
-    String pwd = "imp2083";
+    String user = System.getenv("LOGIN_USER");
+    String pwd = System.getenv("LOGIN_PASS");
     @Override
     public void start(Stage stage) {
         Label titleLabel = new Label("Student Login");

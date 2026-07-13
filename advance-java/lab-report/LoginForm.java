@@ -53,7 +53,9 @@ public class LoginForm extends JFrame {
     private void validateLogin() {
         String username = usernameField.getText();
         String Password = new String(passwordField.getPassword());
-        if (username.equals("abi") && Password.equals("abi123")) {
+        String validUser = System.getenv("LOGIN_USER");
+        String validPass = System.getenv("LOGIN_PASS");
+        if (username.equals(validUser) && Password.equals(validPass)) {
             JOptionPane.showMessageDialog(this, "Login Successfull! \n Welcome, " + username);
         } else {
             JOptionPane.showMessageDialog(this, "Invalide Password");

@@ -7,10 +7,10 @@ import jakarta.servlet.http.*;
 public class FeedbackServlet extends HttpServlet {
 
     static final String URL =
-        "jdbc:mariadb://localhost:3306/student_java";
+        System.getenv().getOrDefault("DB_URL", "jdbc:mariadb://localhost:3306/student_java");
 
-    static final String USER = "abi";
-    static final String PASS = "imp2083";
+    static final String USER = System.getenv("DB_USER");
+    static final String PASS = System.getenv("DB_PASSWORD");
 
     protected void doPost(
             HttpServletRequest request,

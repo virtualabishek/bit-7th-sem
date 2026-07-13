@@ -38,7 +38,9 @@ public class LoginForm extends Application {
             String username = userField.getText();
             String password = passField.getText();
 
-            if (username.equals("admin") && password.equals("1234")) {
+            String validUser = System.getenv("LOGIN_USER");
+            String validPass = System.getenv("LOGIN_PASS");
+            if (username.equals(validUser) && password.equals(validPass)) {
                 System.out.println("Login Successful");
             } else {
                 System.out.println("Invalid Credentials");
